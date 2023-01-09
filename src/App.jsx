@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import SearchBar from "./components/Search";
+import SearchBar from "./components/SearchBar";
+import WebTable from "./components/WebTable";
 
 function App() {
   return (
@@ -17,9 +18,8 @@ function App() {
           Better Search
         </span>
       </div>
-      <div className="mt-20 flex justify-center font-inter">
-        <SearchBar />
-      </div>
+      <SearchBar />
+      <WebTable />
     </div>
   );
 }
