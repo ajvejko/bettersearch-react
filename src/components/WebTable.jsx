@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../App.css";
+import WebButton from "./WebButton";
 
 export default function WebTable() {
   return (
@@ -9,11 +10,11 @@ export default function WebTable() {
           Websites
         </div>
         <div className="mt-3 flex flex-wrap justify-center">
-          <button className="mr-3 text-white border-2 rounded-xl px-3 py-2">
-            Github
-          </button>
-          <button className="mr-3 text-white border-2 rounded-xl px-3 py-2">
-            Stackoverflow
+          <button
+            onClick={""}
+            className="mr-3 text-white border-2 rounded-xl px-3 py-2"
+          >
+            +
           </button>
         </div>
       </div>
