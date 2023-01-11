@@ -4,7 +4,7 @@ import "../App.css";
 export default function WebButton() {
   return (
     <div>
-      <button className="mr-3 text-white border-2 rounded-xl px-3 py-2"></button>
+      <button className="text-white mt-4 py-1 px-2 rounded-md border-2 shadow-[0_0px_5px_rgba(0,0,0,0.25)] border-white active:shadow-white"></button>
     </div>
   );
 }

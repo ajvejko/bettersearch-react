@@ -3,8 +3,13 @@ import "../App.css";
 import WebAdd from "./WebAdd";
 import WebButton from "./WebButton";
 
+let links = JSON.parse(localStorage.getItem("links") || []);
+
 export default function WebTable() {
   const [visible, setVisible] = useState(false);
+  const handleClosing = () => {
+    setVisible(false);
+  };
   return (
     <div className="w-1/2 flex justify-center mx-auto">
       <div>
@@ -20,7 +25,7 @@ export default function WebTable() {
           >
             +
           </button>
-          {visible && <WebAdd />}
+          {visible && <WebAdd onClick={handleClosing} />}
           {console.log(visible)}
         </div>
       </div>
