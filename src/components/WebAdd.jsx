@@ -30,7 +30,7 @@ export default function WebAdd({ onClick, handleAdd }) {
       <div className="w-1/4 border-2 bg-neutral-900 relative rounded-xl p-4 text-center">
         <button
           onClick={onClick}
-          className="text-white text-lg absolute py-1 px-2 right-0 top-0 hover:text-red-500"
+          className="text-white text-lg absolute py-0.25 px-2 right-0 top-0 hover:text-red-500"
         >
           X
         </button>
