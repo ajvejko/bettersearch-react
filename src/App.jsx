@@ -1,8 +1,6 @@
-import { useState } from "react";
 import "./App.css";
 import SearchBar from "./components/SearchBar";
 import WebTable from "./components/WebTable";
-import WebAdd from "./components/WebAdd";
 
 function App() {
   return (
