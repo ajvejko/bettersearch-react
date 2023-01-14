@@ -3,12 +3,18 @@ import "../App.css";
 
 export default function SearchBar({ selectedLink }) {
   const [inputValue, setInputValue] = useState("");
+
+  const handleSubmit = () => {
+    event.preventDefault();
+    window.open(selectedLink + inputValue);
+  };
+
   //Function that puts the link together
   const handleInput = (event) => {
     setInputValue(event.target.value);
   };
   return (
-    <div className="mt-20 w-1/2 mx-auto font-inter">
+    <form onSubmit={handleSubmit} className="mt-20 w-1/2 mx-auto font-inter">
       {/* Input field for searching */}
       <input
         type="text"
@@ -17,8 +23,8 @@ export default function SearchBar({ selectedLink }) {
       ></input>
       {/* Display finalized link */}
       <div className="text-stone-800 mr-6 mt-1 text-sm text-right">
-        {selectedLink ? selectedLink+inputValue : "google.com"}
+        {selectedLink ? selectedLink + inputValue : "google.com"}
       </div>
-    </div>
+    </form>
   );
 }
