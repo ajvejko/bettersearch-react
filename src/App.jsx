@@ -5,6 +5,7 @@ import WebTable from "./components/WebTable";
 import React from "react";
 
 function App() {
+  const [selectedLink, setSelectedLink] = useState(null);
   return (
     <div>
       {/* the background */}
@@ -21,8 +22,8 @@ function App() {
         </span>
       </div>
       {/* render the SearchBar and WebTable components */}
-      <SearchBar />
-      <WebTable />
+      <SearchBar selectedLink={selectedLink}/>
+      <WebTable setSelectedLink={setSelectedLink}/>
     </div>
   );
 }

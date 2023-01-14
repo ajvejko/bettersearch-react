@@ -3,7 +3,7 @@ import "../App.css";
 import WebAdd from "./WebAdd";
 import WebButton from "./WebButton";
 
-export default function WebTable() {
+export default function WebTable({ setSelectedLink }) {
   // Retrieve the links from local storage
   const links = JSON.parse(localStorage.getItem("links") || "[]");
   const [visible, setVisible] = useState(false);
@@ -16,14 +16,16 @@ export default function WebTable() {
   };
 
   // Function to handle when a button is toggled
-  const handleButtonToggle = (name) => {
+  const handleButtonToggle = (name, search) => {
     setSelectedButton(name);
+    setSelectedLink(search);
   };
 
   // Function to handle adding a new link to the list
   const handleAdd = (name, home, search) => {
     links.push({ name, home, search });
     localStorage.setItem("links", JSON.stringify(links));
+    setLinkState(links);
   };
 
   // Map through the links and render a button for each one
