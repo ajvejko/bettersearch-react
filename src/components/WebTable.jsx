@@ -4,28 +4,29 @@ import WebAdd from "./WebAdd";
 import WebButton from "./WebButton";
 
 export default function WebTable() {
+  // Retrieve the links from local storage
   const links = JSON.parse(localStorage.getItem("links") || "[]");
   const [visible, setVisible] = useState(false);
-  const [inputValue, setInputValue] = useState("");
   const [linkState, setLinkState] = useState(links);
   const [selectedButton, setSelectedButton] = useState(null);
-  const [selectedLink, setSelectedLink] = useState(null);
 
+  // Function to handle closing the WebAdd component
   const handleClosing = () => {
     setVisible(false);
   };
 
-  const handleButtonToggle = (name, search) => {
+  // Function to handle when a button is toggled
+  const handleButtonToggle = (name) => {
     setSelectedButton(name);
-    setSelectedLink(search);
   };
 
+  // Function to handle adding a new link to the list
   const handleAdd = (name, home, search) => {
     links.push({ name, home, search });
     localStorage.setItem("links", JSON.stringify(links));
-    setLinkState(links);
   };
 
+  // Map through the links and render a button for each one
   const buttons = linkState.map((link) => (
     <WebButton
       name={link.name}
@@ -48,6 +49,7 @@ export default function WebTable() {
         <div className="mt-3 flex flex-wrap justify-center">
           {buttons}
           <button
+            //Sets the state visible to true
             onClick={() => {
               setVisible(!visible);
             }}
@@ -55,7 +57,10 @@ export default function WebTable() {
           >
             +
           </button>
-          {visible && <WebAdd onClick={handleClosing} handleAdd={handleAdd} />}
+          {/* When visible is true, renders WebAdd with handleClosing and handleAdd properties */}
+          {visible && (
+            <WebAdd handleClosing={handleClosing} handleAdd={handleAdd} />
+          )}
         </div>
       </div>
     </div>
