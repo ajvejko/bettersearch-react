@@ -4,9 +4,10 @@ import "../App.css";
 export default function SearchBar({ selectedLink }) {
   const [inputValue, setInputValue] = useState("");
 
-  const handleSubmit = () => {
+  //Function to open window with selected search
+  const handleSubmit = (event) => {
     event.preventDefault();
-    window.open(selectedLink + inputValue);
+    window.open(selectedLink + inputValue, "_self");
   };
 
   //Function that puts the link together
