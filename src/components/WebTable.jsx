@@ -55,7 +55,7 @@ export default function WebTable({ setSelectedLink }) {
             onClick={() => {
               setVisible(!visible);
             }}
-            className="text-white pb-0.5 px-2 rounded-xl border-2 shadow-[0_0px_5px_rgba(0,0,0,0.25)] border-white active:shadow-white"
+            className="text-white pb-0.5 px-2 rounded-xl border-2 mt-1 shadow-[0_0px_5px_rgba(0,0,0,0.25)] border-white active:shadow-white"
           >
             +
           </button>
