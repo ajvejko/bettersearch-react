@@ -39,7 +39,7 @@ export default function WebAdd({ handleClosing, handleAdd }) {
     <div className="absolute bg-black/50 top-0 z-2 h-screen w-screen flex justify-center items-center">
       <div className="w-1/4 border-2 bg-neutral-900 relative rounded-xl p-4 text-center">
         <button
-          onClick={onClick}
+          onClick={handleClosing}
           className="text-white text-lg absolute py-0.25 px-2 right-0 top-0 hover:text-red-500"
         >
           X
@@ -56,7 +56,7 @@ export default function WebAdd({ handleClosing, handleAdd }) {
           onChange={handleInput}
           placeholder="Name of the button"
           className={`w-full px-2  py-1 rounded-md outline-none border-2 bg-neutral-800 text-white focus:shadow-[0_0px_11px_rgba(0,0,0,0.25)] ${
-            /* Checks if the isIllegal state is true, if true turns element red */
+            // Checks if the isIllegal state is true, if true turns element red
             isIllegal
               ? "border-red-500 focus:shadow-red-500"
               : "border-white focus:shadow-blue-500"
@@ -84,7 +84,7 @@ export default function WebAdd({ handleClosing, handleAdd }) {
           disabled={isIllegal}
           onClick={addButton}
           className={`text-white mt-4 py-1 px-2 rounded-md border-2 shadow-[0_0px_5px_rgba(0,0,0,0.25)]  ${
-            /* Checks if the isIllegal state is true, if true turns element red */
+            // Checks if the isIllegal state is true, if true turns element red
             isIllegal
               ? "border-red-500 shadow-red-500"
               : "border-white active:shadow-white"
