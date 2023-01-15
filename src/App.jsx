@@ -24,7 +24,7 @@ function App() {
       </div>
       {/* render the SearchBar and WebTable components */}
       <SearchBar selectedLink={selectedLink}/>
-      <WebEdit />
+      <WebTable setSelectedLink={setSelectedLink}/>
     </div>
   );
 }
