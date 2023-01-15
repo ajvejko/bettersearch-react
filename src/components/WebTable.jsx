@@ -45,7 +45,7 @@ export default function WebTable({ setSelectedLink }) {
   return (
     <div className="w-1/2 flex justify-center mx-auto">
       <div>
-        <div className="mt-12 text-white text-3xl font-bebas flex justify-center">
+        <div className="mt-12 text-white text-4xl font-bebas flex justify-center">
           Websites
         </div>
         <div className="mt-3 flex flex-wrap justify-center">
