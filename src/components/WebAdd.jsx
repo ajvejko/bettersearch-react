@@ -83,7 +83,7 @@ export default function WebAdd({ handleClosing, handleAdd }) {
         <button
           disabled={isIllegal}
           onClick={addButton}
-          className={`text-white mt-4 py-1 px-2 rounded-md border-2 shadow-[0_0px_5px_rgba(0,0,0,0.25)]  ${
+          className={`text-white mt-4 py-1 px-2 rounded-md border-2 shadow-[0_0px_8px_rgba(0,0,0,0.25)]  ${
             // Checks if the isIllegal state is true, if true turns element red
             isIllegal
               ? "border-red-500 shadow-red-500"
