@@ -48,14 +48,14 @@ export default function WebTable({ setSelectedLink }) {
         <div className="mt-12 text-white text-4xl font-bebas flex justify-center">
           Websites
         </div>
-        <div className="mt-3 flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center">
           {buttons}
           <button
             //Sets the state visible to true
             onClick={() => {
               setVisible(!visible);
             }}
-            className="text-white pb-0.5 px-2 rounded-xl border-2 mt-1 shadow-[0_0px_5px_rgba(0,0,0,0.25)] border-white active:shadow-white"
+            className="text-white pb-0.5 px-2 rounded-xl border-2 mt-4 shadow-[0_0px_5px_rgba(0,0,0,0.25)] border-white active:shadow-white"
           >
             +
           </button>
