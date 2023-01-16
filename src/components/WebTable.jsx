@@ -3,12 +3,12 @@ import "../App.css";
 import WebAdd from "./WebAdd";
 import WebButton from "./WebButton";
 
-export default function WebTable({ setSelectedLink }) {
+export default function WebTable({ setSelectedSearch, setSelectedHome }) {
   // Retrieve the links from local storage
   const links = JSON.parse(localStorage.getItem("links") || "[]");
   const [visible, setVisible] = useState(false);
   const [linkState, setLinkState] = useState(links);
-  const [selectedButton, setSelectedButton] = useState(null);
+  const [selectedButton, setSelectedButton] = useState(false);
 
   // Function to handle closing the WebAdd component
   const handleClosing = () => {
@@ -16,9 +16,18 @@ export default function WebTable({ setSelectedLink }) {
   };
 
   // Function to handle when a button is toggled
-  const handleButtonToggle = (name, search) => {
-    setSelectedButton(name);
-    setSelectedLink(search);
+  const handleButtonToggle = (name, search, home) => {
+    //If the button clicked is the same as already, deselects
+    if (selectedButton === name) {
+      setSelectedButton(false);
+      setSelectedSearch(null);
+      setSelectedHome(null);
+      return;
+    } else {
+      setSelectedButton(name);
+      setSelectedSearch(search);
+      setSelectedHome(home);
+    }
   };
 
   // Function to handle adding a new link to the list
@@ -33,9 +42,9 @@ export default function WebTable({ setSelectedLink }) {
     <WebButton
       name={link.name}
       search={link.search}
+      home={link.home}
       handleButtonToggle={handleButtonToggle}
       selectedButton={selectedButton}
-      home={link.home}
       key={link.name}
     >
       {link.name}
