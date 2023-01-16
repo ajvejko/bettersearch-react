@@ -4,20 +4,20 @@ import WebAdd from "./WebAdd";
 import WebButton from "./WebButton";
 
 export default function WebTable({ setSelectedSearch, setSelectedHome }) {
-  // Retrieve the links from local storage
+  //Retrieve the links from local storage
   const links = JSON.parse(localStorage.getItem("links") || "[]");
   const [visible, setVisible] = useState(false);
   const [linkState, setLinkState] = useState(links);
   const [selectedButton, setSelectedButton] = useState(false);
 
-  // Function to handle closing the WebAdd component
+  //Function to handle closing the WebAdd component
   const handleClosing = () => {
     setVisible(false);
   };
 
-  // Function to handle when a button is toggled
+  //Function to handle when a button is toggled
   const handleButtonToggle = (name, search, home) => {
-    //If the button clicked is the same as already, deselects
+    //If the button clicked is the same as already it deselects
     if (selectedButton === name) {
       setSelectedButton(false);
       setSelectedSearch(null);
@@ -30,14 +30,14 @@ export default function WebTable({ setSelectedSearch, setSelectedHome }) {
     }
   };
 
-  // Function to handle adding a new link to the list
+  //Function to handle adding a new link to the list
   const handleAdd = (name, home, search) => {
     links.push({ name, home, search });
     localStorage.setItem("links", JSON.stringify(links));
     setLinkState(links);
   };
 
-  // Map through the links and render a button for each one
+  //Map through the links and render a button for each one
   const buttons = linkState.map((link) => (
     <WebButton
       name={link.name}
