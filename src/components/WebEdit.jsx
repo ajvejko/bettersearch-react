@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import "../App.css";
 
-// Retrieve the links from local storage
+//Retrieve the links from local storage
 let links = JSON.parse(localStorage.getItem("links") || "[]");
 
 export default function WebEdit({ handleClosing }) {
@@ -44,7 +44,7 @@ export default function WebEdit({ handleClosing }) {
           onChange={handleInput}
           placeholder="Name of the button"
           className={`w-full px-2  py-1 rounded-md outline-none border-2 bg-neutral-800 text-white focus:shadow-[0_0px_11px_rgba(0,0,0,0.25)] ${
-            // Checks if the isIllegal state is true, if true turns element red
+            //Checks if the isIllegal state is true, if true turns element red
             isIllegal
               ? "border-red-500 focus:shadow-red-500"
               : "border-white focus:shadow-blue-500"
