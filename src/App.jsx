@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import WebTable from "./components/WebTable";
+import WebEdit from "./components/WebEdit";
 import React from "react";
 
 function App() {
