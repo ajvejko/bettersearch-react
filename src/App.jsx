@@ -6,7 +6,8 @@ import WebEdit from "./components/WebEdit";
 import React from "react";
 
 function App() {
-  const [selectedLink, setSelectedLink] = useState(null);
+  const [selectedSearch, setSelectedSearch] = useState(null);
+  const [selectedHome, setSelectedHome] = useState(null);
   return (
     <div>
       {/* the background */}
@@ -23,8 +24,8 @@ function App() {
         </span>
       </div>
       {/* render the SearchBar and WebTable components */}
-      <SearchBar selectedLink={selectedLink}/>
-      <WebTable setSelectedLink={setSelectedLink}/>
+      <SearchBar selectedSearch={selectedSearch} selectedHome={selectedHome}/>
+      <WebTable setSelectedSearch={setSelectedSearch} setSelectedHome={setSelectedHome}/>
     </div>
   );
 }

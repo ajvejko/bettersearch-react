@@ -1,19 +1,31 @@
 import { useState } from "react";
 import "../App.css";
 
-export default function SearchBar({ selectedLink }) {
+export default function SearchBar({ selectedSearch, selectedHome }) {
   const [inputValue, setInputValue] = useState("");
 
   //Function to open window with selected search
   const handleSubmit = (event) => {
     event.preventDefault();
-    window.open(selectedLink + inputValue, "_self");
+    //Check if nothing is selected and input is empty then nothing should happen.
+    if (!inputValue.trim() && !selectedSearch) {
+      return;
+    }
+    //Check for the input, if the input is empty, but the button is toggled then it opens the home page of it, else opens search or default link if no button is selected
+    if (!inputValue.trim() && selectedHome) {
+      window.open(selectedHome, "_self");
+    } else {
+      selectedSearch
+        ? window.open(selectedSearch + inputValue, "_self")
+        : window.open("https://www.google.com/search?q=" + inputValue, "_self");
+    }
   };
 
   //Function that puts the link together
   const handleInput = (event) => {
     setInputValue(event.target.value);
   };
+
   return (
     <form onSubmit={handleSubmit} className="mt-20 w-1/2 mx-auto font-inter">
       {/* Input field for searching */}
@@ -24,7 +36,7 @@ export default function SearchBar({ selectedLink }) {
       ></input>
       {/* Display finalized link */}
       <div className="text-stone-800 mr-6 mt-1 text-sm text-right">
-        {selectedLink ? selectedLink + inputValue : "google.com"}
+        {selectedSearch || "https://www.google.com/search?q="}
       </div>
     </form>
   );
