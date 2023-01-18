@@ -36,7 +36,9 @@ export default function SearchBar({ selectedSearch, selectedHome }) {
       ></input>
       {/* Display finalized link */}
       <div className="text-stone-800 mr-6 mt-1 text-sm text-right">
-        {selectedSearch || "https://www.google.com/search?q="}
+        {selectedSearch
+          ? selectedSearch + inputValue
+          : "https://www.google.com/search?q=" + inputValue}
       </div>
     </form>
   );

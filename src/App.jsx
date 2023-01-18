@@ -24,8 +24,11 @@ function App() {
         </span>
       </div>
       {/* render the SearchBar and WebTable components */}
-      <SearchBar selectedSearch={selectedSearch} selectedHome={selectedHome}/>
-      <WebTable setSelectedSearch={setSelectedSearch} setSelectedHome={setSelectedHome}/>
+      <SearchBar selectedSearch={selectedSearch} selectedHome={selectedHome} />
+      <WebTable
+        setSelectedSearch={setSelectedSearch}
+        setSelectedHome={setSelectedHome}
+      />
     </div>
   );
 }
