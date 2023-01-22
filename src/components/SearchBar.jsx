@@ -11,7 +11,6 @@ export default function SearchBar({
 
   //Function to open window with selected search
   const handleSubmit = () => {
-    event.preventDefault();
     //Check if nothing is selected and input is empty then nothing should happen.
     if (!inputValue.trim() && !selectedSearch) {
       return;
