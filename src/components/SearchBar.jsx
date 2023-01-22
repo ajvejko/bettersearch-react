@@ -1,12 +1,16 @@
 import { useState } from "react";
 import "../App.css";
 
-export default function SearchBar({ selectedSearch, selectedHome }) {
+export default function SearchBar({
+  selectedSearch,
+  selectedHome,
+  enterClicked,
+  setEnterClicked,
+}) {
   const [inputValue, setInputValue] = useState("");
 
   //Function to open window with selected search
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
     //Check if nothing is selected and input is empty then nothing should happen.
     if (!inputValue.trim() && !selectedSearch) {
       return;
@@ -26,8 +30,20 @@ export default function SearchBar({ selectedSearch, selectedHome }) {
     setInputValue(event.target.value);
   };
 
+  if (enterClicked) {
+    handleSubmit();
+    setEnterClicked(false);
+  }
+
   return (
-    <form onSubmit={handleSubmit} className="mt-20 w-1/2 mx-auto font-inter">
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        setEnterClicked(true);
+        handleSubmit();
+      }}
+      className="mt-20 w-1/2 mx-auto font-inter"
+    >
       {/* Input field for searching */}
       <input
         type="text"
