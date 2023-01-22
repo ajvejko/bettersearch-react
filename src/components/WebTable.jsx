@@ -9,6 +9,9 @@ export default function WebTable({ setSelectedSearch, setSelectedHome }) {
   const links = JSON.parse(localStorage.getItem("links") || "[]");
   const [openAdd, setOpenAdd] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
+  const [editName, setEditName] = useState("");
+  const [editHome, setEditHome] = useState("");
+  const [editSearch, setEditSearch] = useState("");
   const [linkState, setLinkState] = useState(links);
   const [selectedButton, setSelectedButton] = useState(false);
 
@@ -16,11 +19,17 @@ export default function WebTable({ setSelectedSearch, setSelectedHome }) {
   const handleClosing = () => {
     setOpenAdd(false);
     setOpenEdit(false);
+    setSelectedButton(false);
+    setSelectedSearch(null);
+    setSelectedHome(null);
   };
 
   //Function to handle when a button is toggled
-  const handleButtonToggle = (event, name, search, home) => {
+  const handleButtonToggle = (search, name, home) => {
     if (event.shiftKey) {
+      setEditSearch(search);
+      setEditName(name);
+      setEditHome(home);
       setOpenEdit(true);
     } else {
       if (selectedButton === name) {
@@ -35,7 +44,6 @@ export default function WebTable({ setSelectedSearch, setSelectedHome }) {
       }
     }
   };
-  //If the button clicked is the same as already it deselects
 
   //Function to handle adding a new link to the list
   const handleAdd = (name, home, search) => {
@@ -51,7 +59,7 @@ export default function WebTable({ setSelectedSearch, setSelectedHome }) {
       search={link.search}
       home={link.home}
       handleButtonToggle={() =>
-        handleButtonToggle(event, link.name, link.name, link.home)
+        handleButtonToggle(link.search, link.name, link.home)
       }
       selectedButton={selectedButton}
       key={link.name}
@@ -83,7 +91,17 @@ export default function WebTable({ setSelectedSearch, setSelectedHome }) {
           )}
 
           {/* When openEdit is true, renders WebAdd with handleClosing and handleAdd properties */}
-          {openEdit && <WebEdit handleClosing={handleClosing} />}
+          {openEdit && (
+            <WebEdit
+              handleClosing={handleClosing}
+              editSearch={editSearch}
+              editName={editName}
+              editHome={editHome}
+              setLinkState={setLinkState}
+              setSelectedSearch={setSelectedSearch}
+              setSelectedHome={setSelectedHome}
+            />
+          )}
         </div>
       </div>
     </div>
