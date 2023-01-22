@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchBar from "./components/SearchBar";
 import WebTable from "./components/WebTable";
 import WebEdit from "./components/WebEdit";
@@ -8,6 +8,22 @@ import React from "react";
 function App() {
   const [selectedSearch, setSelectedSearch] = useState(null);
   const [selectedHome, setSelectedHome] = useState(null);
+  const [enterClicked, setEnterClicked] = useState(false);
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      setEnterClicked(true);
+    }
+  };
+
+  //attach event listener
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyPress);
+    return () => {
+      //detach event listener when component unmounts
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
   return (
     <div>
       {/* the background */}
@@ -24,8 +40,16 @@ function App() {
         </span>
       </div>
       {/* render the SearchBar and WebTable components */}
-      <SearchBar selectedSearch={selectedSearch} selectedHome={selectedHome}/>
-      <WebTable setSelectedSearch={setSelectedSearch} setSelectedHome={setSelectedHome}/>
+      <SearchBar
+        selectedSearch={selectedSearch}
+        selectedHome={selectedHome}
+        enterClicked={enterClicked}
+        setEnterClicked={setEnterClicked}
+      />
+      <WebTable
+        setSelectedSearch={setSelectedSearch}
+        setSelectedHome={setSelectedHome}
+      />
     </div>
   );
 }

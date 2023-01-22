@@ -17,7 +17,7 @@ export default function WebTable({ setSelectedSearch, setSelectedHome }) {
 
   //Function to handle when a button is toggled
   const handleButtonToggle = (name, search, home) => {
-    //If the button clicked is the same as already, deselects
+    //If the button clicked is the same as already it deselects
     if (selectedButton === name) {
       setSelectedButton(false);
       setSelectedSearch(null);

@@ -79,7 +79,7 @@ export default function WebEdit({ handleClosing }) {
             disabled={isIllegal}
             onClick={editButton}
             className={`text-white py-1 px-2 rounded-md border-2 shadow-[0_0px_8px_rgba(0,0,0,0.25)]  ${
-              // Checks if the isIllegal state is true, if true turns element red
+              //Checks if the isIllegal state is true, if true turns element red
               isIllegal
                 ? "border-red-500 shadow-red-500"
                 : "border-white active:shadow-white"
