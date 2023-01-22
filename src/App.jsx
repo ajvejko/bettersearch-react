@@ -9,18 +9,18 @@ function App() {
   const [selectedSearch, setSelectedSearch] = useState(null);
   const [selectedHome, setSelectedHome] = useState(null);
   const [enterClicked, setEnterClicked] = useState(false);
-
+  //If enter is pressed, sets enterClicked to true which then runs handleSubmit function
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       setEnterClicked(true);
     }
   };
 
-  //attach event listener
+  //Attach event listener
   useEffect(() => {
     document.addEventListener("keydown", handleKeyPress);
     return () => {
-      //detach event listener when component unmounts
+      //Detach event listener when component unmounts
       document.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
@@ -39,7 +39,7 @@ function App() {
           Better Search
         </span>
       </div>
-      {/* render the SearchBar and WebTable components */}
+      {/* Render the SearchBar and WebTable components */}
       <SearchBar
         selectedSearch={selectedSearch}
         selectedHome={selectedHome}

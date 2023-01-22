@@ -11,6 +11,7 @@ export default function SearchBar({
 
   //Function to open window with selected search
   const handleSubmit = () => {
+    event.preventDefault();
     //Check if nothing is selected and input is empty then nothing should happen.
     if (!inputValue.trim() && !selectedSearch) {
       return;
@@ -29,21 +30,14 @@ export default function SearchBar({
   const handleInput = (event) => {
     setInputValue(event.target.value);
   };
-
+  //Check so that handleSubmit gets ran and sets the state back to false so it doesnt create inf loop
   if (enterClicked) {
     handleSubmit();
     setEnterClicked(false);
   }
 
   return (
-    <form
-      onSubmit={(event) => {
-        event.preventDefault();
-        setEnterClicked(true);
-        handleSubmit();
-      }}
-      className="mt-20 w-1/2 mx-auto font-inter"
-    >
+    <form className="mt-20 w-1/2 mx-auto font-inter">
       {/* Input field for searching */}
       <input
         type="text"
