@@ -29,7 +29,7 @@ export default function SearchBar({
   const handleInput = (event) => {
     setInputValue(event.target.value);
   };
-
+  //Check so that handleSubmit gets ran and sets the state back to false so it doesnt create inf loop
   if (enterClicked) {
     handleSubmit();
     setEnterClicked(false);
@@ -40,7 +40,6 @@ export default function SearchBar({
       onSubmit={(event) => {
         event.preventDefault();
         setEnterClicked(true);
-        handleSubmit();
       }}
       className="mt-20 w-1/2 mx-auto font-inter"
     >
