@@ -14,7 +14,6 @@ The goal of BetterSearch is to provide a faster and more efficient way to search
 
 ## To-Do
 
-- Finish edit option to edit a button or delete it.
 - Add a way to easily copy and paste button configs from localStorage
 - Make my own extension for custom new tab.
 - Add a tutorial on how to use the site. 

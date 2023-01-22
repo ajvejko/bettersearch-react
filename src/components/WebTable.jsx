@@ -19,6 +19,7 @@ export default function WebTable({ setSelectedSearch, setSelectedHome }) {
   const handleClosing = () => {
     setOpenAdd(false);
     setOpenEdit(false);
+    //Default the state so user has to update the values after editing
     setSelectedButton(false);
     setSelectedSearch(null);
     setSelectedHome(null);
@@ -26,6 +27,7 @@ export default function WebTable({ setSelectedSearch, setSelectedHome }) {
 
   //Function to handle when a button is toggled
   const handleButtonToggle = (search, name, home) => {
+    //If shift is pressed open edit menu
     if (event.shiftKey) {
       setEditSearch(search);
       setEditName(name);

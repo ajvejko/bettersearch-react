@@ -10,8 +10,6 @@ export default function WebEdit({
   editName,
   editHome,
   setLinkState,
-  setSelectedSearch,
-  setSelectedHome,
 }) {
   const [isIllegal, setIsIllegal] = useState(false);
   const regIllegalChar = /[.*?+<>{}[\]\/]/g;
@@ -36,7 +34,7 @@ export default function WebEdit({
         link.home = newHome;
         link.search = newSearch;
       }
-      //incase it finds no button like that
+      //incase it finds no button
       return link;
     });
 
