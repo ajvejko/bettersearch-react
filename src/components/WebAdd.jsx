@@ -6,7 +6,7 @@ let links = JSON.parse(localStorage.getItem("links") || "[]");
 
 export default function WebAdd({ handleClosing, handleAdd }) {
   const [isIllegal, setIsIllegal] = useState(false);
-  const regIllegalChar = /[.*?+<>{}[\]\/]/g;
+  const regIllegalChar = /[.*?+<>{}[\]\/]/;
 
   //Function that checks if the input cotains illegal characters
   const handleInput = (event) => {
