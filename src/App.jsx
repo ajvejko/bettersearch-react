@@ -27,15 +27,15 @@ function App() {
   return (
     <div>
       {/* the background */}
-      <div className="w-screen h-screen bg-neutral-900 absolute top-0 -z-10">
-        <div className="backdrop-blur-[100px] bg-neutral-900/50 absolute w-full h-full z-10"></div>
-        <div className="h-64 w-64 bg-purple-500/30 absolute top-0 left-0 rounded-br-full"></div>
-        <div className="h-52 w-52 bg-pink-400/30 absolute bottom-0 right-0 botoom rounded-tl-full"></div>
+      <div className="absolute top-0 -z-10 h-screen w-screen bg-neutral-900">
+        <div className="absolute z-10 h-full w-full bg-neutral-900/50 backdrop-blur-[100px]"></div>
+        <div className="absolute top-0 left-0 h-64 w-64 rounded-br-full bg-purple-500/30"></div>
+        <div className="botoom absolute bottom-0 right-0 h-52 w-52 rounded-tl-full bg-pink-400/30"></div>
       </div>
-      <div className="mt-14 text-6xl text-slate-50 text-center font-bebas">
+      <div className="mt-14 text-center font-bebas text-6xl text-slate-50">
         Search better <br />
         with&nbsp;
-        <span className="text-7xl bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-400">
+        <span className="bg-gradient-to-r from-purple-500 to-pink-400 bg-clip-text text-7xl text-transparent">
           Better Search
         </span>
       </div>
