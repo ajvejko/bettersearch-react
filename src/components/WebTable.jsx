@@ -71,9 +71,9 @@ export default function WebTable({ setSelectedSearch, setSelectedHome }) {
   ));
 
   return (
-    <div className="w-1/2 flex justify-center mx-auto">
+    <div className="mx-auto flex w-1/2 justify-center">
       <div>
-        <div className="mt-12 text-white text-4xl font-bebas flex justify-center">
+        <div className="mt-12 flex justify-center font-bebas text-4xl text-white">
           Websites
         </div>
         <div className="flex flex-wrap justify-center">
@@ -83,7 +83,7 @@ export default function WebTable({ setSelectedSearch, setSelectedHome }) {
             onClick={() => {
               setOpenAdd(!openAdd);
             }}
-            className="text-white pb-0.5 px-2 rounded-xl border-2 mt-4 shadow-[0_0px_5px_rgba(0,0,0,0.25)] border-white active:shadow-white"
+            className="mt-4 rounded-xl border-2 border-white px-2 pb-0.5 text-white shadow-[0_0px_5px_rgba(0,0,0,0.25)] active:shadow-white"
           >
             +
           </button>

@@ -37,16 +37,16 @@ export default function SearchBar({
   }
 
   return (
-    <form className="mt-20 w-1/2 mx-auto font-inter">
+    <form className="mx-auto mt-20 w-1/2 font-inter">
       {/* Input field for searching */}
       <input
         type="text"
         autoFocus
         onChange={handleInput}
-        className="w-full px-5 py-2 rounded-full outline-none border-2 bg-neutral-800 text-white focus:shadow-[0_0px_11px_rgba(0,0,0,0.25)] focus:shadow-blue-500 text-xl"
+        className="w-full rounded-full border-2 bg-neutral-800 px-5 py-2 text-xl text-white outline-none focus:shadow-[0_0px_11px_rgba(0,0,0,0.25)] focus:shadow-blue-500"
       ></input>
       {/* Display finalized link */}
-      <div className="text-stone-800 mr-6 mt-1 text-sm text-right">
+      <div className="mr-6 mt-1 text-right text-sm text-stone-800">
         {selectedSearch
           ? selectedSearch + inputValue
           : "https://www.google.com/search?q=" + inputValue}
