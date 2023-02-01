@@ -43,6 +43,7 @@ export default function SearchBar({
         type="text"
         autoFocus
         onChange={handleInput}
+        placeholder="Search the web"
         className="w-full rounded-full border-2 bg-neutral-800 px-5 py-2 text-xl text-white outline-none focus:shadow-[0_0px_11px_rgba(0,0,0,0.25)] focus:shadow-blue-500"
       ></input>
       {/* Display finalized link */}
