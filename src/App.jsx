@@ -30,7 +30,7 @@ function App() {
       <div className="absolute top-0 -z-10 h-screen w-screen bg-neutral-900">
         <div className="absolute z-10 h-full w-full bg-neutral-900/50 backdrop-blur-[100px]"></div>
         <div className="absolute top-0 left-0 h-64 w-64 rounded-br-full bg-purple-500/30"></div>
-        <div className="botoom absolute bottom-0 right-0 h-52 w-52 rounded-tl-full bg-pink-400/30"></div>
+        <div className="absolute bottom-0 right-0 h-52 w-52 rounded-tl-full bg-pink-400/30"></div>
       </div>
       <div className="mt-14 text-center font-bebas text-6xl text-slate-50">
         Search better <br />
